@@ -109,12 +109,18 @@ function renderItems(items) {
 		const itemTitleHTML = document.createElement("h1");
 		const itemTextHTML = document.createElement("p");
 		const deleteItemButton = document.createElement("button");
+		const editItemButton = document.createElement("button");
 		const itemDate = document.createElement("span");
 		itemDate.textContent = item.date;
 		deleteItemButton.addEventListener("click", () =>
 			noteHandler.deleteNote(item.noteId)
 		);
 		deleteItemButton.textContent = "Delete Note";
+		editItemButton.addEventListener("click", () =>
+			noteHandler.editNote(item.noteId)
+		);
+		editItemButton.textContent = "Edit Note";
+		editItemButton.classList.add("editButton");
 		deleteItemButton.classList.add("deleteButton");
 		itemTitleHTML.textContent = title;
 		itemTextHTML.textContent = text;
@@ -123,5 +129,6 @@ function renderItems(items) {
 		itemDiv.appendChild(itemTextHTML);
 		itemDiv.appendChild(itemDate);
 		itemDiv.appendChild(deleteItemButton);
+		itemDiv.appendChild(editItemButton);
 	});
 }
