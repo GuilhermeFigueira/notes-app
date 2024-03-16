@@ -4,15 +4,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
-	<body>
-		<h1>Notes</h1>
-		<h2 id="noteQuantity"></h2>
-		<form action="" id="createNoteForm">
+	<body class="flex flex-col items-center w-full">
+		<h1 class="bg-black w-full text-white text-center font-black text-3xl">
+			Notes
+		</h1>
+		<form
+			action=""
+			id="createNoteForm"
+			class="flex flex-col bg-stone-300 w-1/2 items-center"
+		>
 			<input type="text" id="noteTitle" />
 			<textarea type="text" id="noteText"></textarea>
-			<button>Create Note</button>
+			<button class="bg-sky-300 rounded-lg py-2 px-4">Create Note</button>
 		</form>
+		<div id="notes"></div>
 		<script src="index.js"></script>
 	</body>
 </html>
